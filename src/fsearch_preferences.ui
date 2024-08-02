@@ -614,6 +614,23 @@
                                     <property name="position">1</property>
                                   </packing>
                                 </child>
+                                <child>
+                                  <object class="GtkCheckButton" id="show_trash_dialog">
+                                    <property name="label" translatable="yes">TRASH</property>
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="receives-default">False</property>
+                                    <property name="has-tooltip">True</property>
+                                    <property name="margin-left">24</property>
+                                    <property name="margin-start">24</property>
+                                    <property name="draw-indicator">True</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
                               </object>
                             </child>
                           </object>
@@ -1494,7 +1511,7 @@ Note that some window managers ignore this request and force the window to have 
 
 When a file/folder was successfully opened one of the following actions can be performed:
 	• &lt;b&gt;Nothing:&lt;/b&gt; Nothing happens.
-	• &lt;b&gt;Minimize:&lt;/b&gt; The currently selected FSearch window becomes minimized. 
+	• &lt;b&gt;Minimize:&lt;/b&gt; The currently selected FSearch window becomes minimized.
 	• &lt;b&gt;Close:&lt;/b&gt; Quit FSearch.
 
 You can configure if those actions should be triggered when the file was opened with

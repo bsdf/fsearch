@@ -218,7 +218,10 @@ fsearch_delete_selection(GSimpleAction *action, GVariant *variant, bool delete, 
                                       G_CALLBACK(gtk_widget_destroy),
                                       NULL);
     }
-    if (num_trashed_or_deleted > 0) {
+
+    FsearchConfig *config = fsearch_application_get_config(FSEARCH_APPLICATION_DEFAULT);
+
+    if (num_trashed_or_deleted > 0 && config->show_trash_dialog) {
         g_autoptr(GString) trashed_or_deleted_message = g_string_new(NULL);
         g_string_printf(trashed_or_deleted_message,
                         delete ? _("Deleted %d file(s).") : _("Moved %d file(s) to the trash."),
@@ -469,7 +472,7 @@ fsearch_window_action_open_with(GSimpleAction *action, GVariant *variant, gpoint
     #else
     g_autoptr(GDesktopAppInfo) app_info = g_desktop_app_info_new(app_id);
     #endif
-    
+
     if (!app_info) {
         return;
     }

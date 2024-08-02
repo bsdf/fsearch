@@ -75,6 +75,7 @@ struct _FsearchConfig {
 
     // Warning Dialogs
     bool show_dialog_failed_opening;
+    bool show_trash_dialog;
 
     // View menu
     bool show_menubar;
